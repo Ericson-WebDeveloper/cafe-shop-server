@@ -1,0 +1,12 @@
+node_modules
+.env
+build
+# Ignore text files
+*.txt
+*.md
+
+# Ignore PEM files
+*.pem
+
+# Ignore JSON files
+*.json
