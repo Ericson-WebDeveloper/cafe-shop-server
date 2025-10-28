@@ -5,8 +5,10 @@ import { IProductType } from "../types/ProductType";
 import { IVariantType } from "../types/VarianType";
 import { ICategoryType } from "../types/CategoryType";
 import { IVariantSelectType } from "../types/VariantSelectionType";
+import { Paginate } from "./PaginateClass";
 
-class ProductClass {
+class ProductClass extends Paginate {
+  
   async createNewProduct(
     datas: Record<any, string | number | boolean | any[] | any>
   ) {
@@ -196,11 +198,12 @@ class ProductClass {
 
     let limit = 5;
     let totalP = await this.productsCount(final_condition);
-    let { result, startIndex, endIndex } = this.responseFormatWithPaginate(
-      page,
-      totalP,
-      limit
-    );
+    // let { result, startIndex, endIndex } = this.responseFormatWithPaginate(
+    //   page,
+    //   totalP,
+    //   limit
+    // );
+    let { result, startIndex, endIndex } = this.responsePaginate(page, totalP, limit);
 
     result.data = await Product.aggregate([
       {
