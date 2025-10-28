@@ -8,5 +8,5 @@ build
 # Ignore PEM files
 *.pem
 
-# Ignore JSON files
-*.json
+# # Ignore JSON files
+# *.json
